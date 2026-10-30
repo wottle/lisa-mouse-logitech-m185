@@ -1,0 +1,6 @@
+.DS_Store
+# Work in progress, superseded versions and loose source exports are kept locally only
+/release_files/
+/working files/
+/*.stl
+/*.3mf
