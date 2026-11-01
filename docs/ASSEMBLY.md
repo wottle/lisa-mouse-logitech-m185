@@ -12,12 +12,18 @@ Photos below show the full build, in order. Part names refer to the files in
   against the photos before printing.
 - 1 × AA battery
 - 5 × adhesive mouse feet (the white oval pads in the photos)
-- **M3 screws** and a screwdriver:
-  - shorter M3 screws for the PCB (1) and the button retainer plate (2)
-  - longer M3 screws to hold the two shells together
+- Screwdriver and **M3 screws**:
+
+  | Use | Screw | Qty |
+  |-----|-------|:---:|
+  | PCB (step 9) | M3×4 flat head | 1 |
+  | Button retainer plate (step 12) | M3×6 countersunk | 2 |
+  | Joining the shells (step 14) | M3×8 countersunk | 2* |
+
+  \* The photos show two case screws, at the end with the locking tabs.
 - Optional: rainbow Apple logo decal
 
-<!-- TODO(author): list the exact M3 screw lengths and counts (PCB and retainer: short; shell: longer), screw head type, where the feet and the logo decal come from, and battery polarity. -->
+<!-- TODO(author): confirm the case screw count, where the feet and the logo decal come from, and battery polarity. -->
 
 
 ## Prepare the donor mouse
@@ -74,7 +80,7 @@ Lower the PCB into the base with the optical sensor over the sensor window. Seat
 
 ### Step 9
 
-Screw the PCB down with a single screw at the end of the battery compartment.
+Screw the PCB down with a single M3×4 flat head screw at the end of the battery compartment.
 
 <img src="../images/assembly/9_screw_down_pcb_in_bottom_shell.jpg" width="520" alt="Step 9">
 
@@ -82,7 +88,7 @@ Screw the PCB down with a single screw at the end of the battery compartment.
 
 ### Step 10
 
-Turn the top shell upside down. You need `left_button.stl`, `right_button.stl`, the retainer plate (`button_stop.stl`) and two small screws.
+Turn the top shell upside down. You need `left_button.stl`, `right_button.stl`, the retainer plate (`button_stop.stl`) and two M3×6 countersunk screws.
 
 <img src="../images/assembly/10_prepare_to_assemble_top_shell.jpg" width="520" alt="Step 10">
 
@@ -94,7 +100,7 @@ Drop the two buttons into their slots, then lay the retainer plate over them so 
 
 ### Step 12
 
-Screw the plate down with the two screws. The tension matters: it should hold the buttons in place without binding them, and each button should still move freely and spring back.
+Screw the plate down with the two M3×6 countersunk screws. The tension matters: it should hold the buttons in place without binding them, and each button should still move freely and spring back.
 
 <img src="../images/assembly/12_screw_down_retainer_plate_proper_tension.jpg" width="520" alt="Step 12">
 
@@ -108,7 +114,7 @@ You now have the two finished halves: the top shell with buttons, and the base w
 
 ### Step 14
 
-Fit the halves together and screw them together from underneath. The self-adhesive feet (five oval pads) go on the underside.
+Fit the halves together and screw them together from underneath with the M3×8 countersunk screws. The self-adhesive feet (five oval pads) go on the underside.
 
 <img src="../images/assembly/14_screw_together_shells.jpg" width="520" alt="Step 14">
 
