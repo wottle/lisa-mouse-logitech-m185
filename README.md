@@ -15,10 +15,10 @@ mouse, this one has **two buttons**.
 | 3D printer + PLA | Parts fit a 0.4 mm nozzle; see [docs/PRINTING.md](docs/PRINTING.md). |
 | Small Phillips screwdriver | For the M185's own screws. |
 | 1 × AA battery | Alkaline AA. |
-| 5 × self-adhesive PTFE mouse slides | White oval pads on the underside, for smooth gliding. |
+| PTFE mouse slides (optional) | Self-adhesive pads on the underside for smoother gliding; use any you like. |
 | M3 screws | 1 × M3×4 flat head (PCB), 2 × M3×6 countersunk (button retainer), 2 × M3×8 countersunk (case); see [docs/ASSEMBLY.md](docs/ASSEMBLY.md). |
 
-<!-- TODO(author): add size and source of the PTFE slides and logo decal. -->
+<!-- TODO(author): add the source of the logo decal. -->
 
 ## Printed parts
 

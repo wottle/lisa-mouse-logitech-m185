@@ -11,7 +11,7 @@ Photos below show the full build, in order. Part names refer to the files in
   210-002552 REV003*. Other board revisions may have different layouts, so check yours
   against the photos before printing.
 - 1 × AA battery
-- 5 × self-adhesive PTFE mouse slides (the white oval pads in the photos), so the mouse glides across surfaces
+- Optional: self-adhesive PTFE mouse slides for smoother gliding (any you like; the photos use five white oval pads)
 - Screwdriver and **M3 screws**:
 
   | Use | Screw | Qty |
@@ -22,7 +22,7 @@ Photos below show the full build, in order. Part names refer to the files in
 
 - Optional: rainbow Apple logo decal (if printing the blank top piece - this logo was taken from a damaged PowerMac 6100 case).
 
-<!-- TODO(author): confirm the case screw count, the size and source of the PTFE slides and the logo decal, and battery polarity. -->
+<!-- TODO(author): confirm the case screw count, the source of the logo decal, and battery polarity. -->
 
 
 ## Prepare the donor mouse
@@ -113,7 +113,7 @@ You now have the two finished halves: the top shell with buttons, and the base w
 
 ### Step 14
 
-Fit the halves together and screw them together from underneath with the M3×8 countersunk screws. The self-adhesive PTFE slides (five oval pads) go on the underside.
+Fit the halves together and screw them together from underneath with the M3×8 countersunk screws. If you're using PTFE slides, stick them on the underside.
 
 <img src="../images/assembly/14_screw_together_shells.jpg" width="520" alt="Step 14">
 

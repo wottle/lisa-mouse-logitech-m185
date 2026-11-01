@@ -13,7 +13,7 @@ prototype build.
 | Walls | 2 |
 | Top / bottom layers | 5 / 3 |
 | Infill | 15 %, grid |
-| Supports | Yes — tree (auto), 30° threshold |
+| Supports | Plate 2 only: normal (auto), not tree; 30° threshold |
 | Brim | Auto |
 | Seam | Aligned |
 | Material | PLA (PolyTerra PLA used for the prototype) |
@@ -37,8 +37,8 @@ Each project is split into **two plates**: one that needs no supports, and one t
 
 | Plate | Contents | Supports | Bambu A1 | Creality K2 Plus |
 |-------|----------|----------|----------|------------------|
-| 1 | Base, button retainer plate, battery covers 1 and 2, on/off button | None | ![](../images/plates/bambu_plate_1.png) | ![](../images/plates/creality_plate_1.png) |
-| 2 | Top shell and the two buttons | Tree (auto) | ![](../images/plates/bambu_plate_2.png) | ![](../images/plates/creality_plate_2.png) |
+| 1 (*No Support Needed*) | Base, button retainer plate, battery covers 1 and 2, on/off button | None | ![](../images/plates/bambu_plate_1.png) | ![](../images/plates/creality_plate_1.png) |
+| 2 (*Supports Needed*) | Top shell and the two buttons | Normal (auto) | ![](../images/plates/bambu_plate_2.png) | ![](../images/plates/creality_plate_2.png) |
 
 > **Notes**
 > - The plate 2 project files contain both top-shell variants (logo and plain); only one is
