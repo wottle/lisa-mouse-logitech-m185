@@ -1,59 +1,142 @@
 # Assembly
 
-> **Draft.** The steps below are outlined from the part geometry; items marked
-> **TODO(author)** need to be filled in or corrected from the physical build.
+Photos below show the full build, in order. Part names refer to the files in
+[`models/`](../models/).
 
-## Before you start
+## You'll need
 
-- Printed parts ready (see [PRINTING.md](PRINTING.md)); remove supports and brim, and
-  test-fit the buttons in the shell.
-- A Logitech M185 to cannibalise. Take the USB receiver out of the mouse first and keep it.
+- The printed parts ([PRINTING.md](PRINTING.md)): base, top shell, left and right buttons,
+  button stop (retainer plate), on/off button, battery covers 1 and 2
+- A **Logitech M185** wireless mouse. The photos use a PCB marked *AVALON 22 Single,
+  210-002552 REV003*. Other board revisions may have different layouts, so check yours
+  against the photos before printing.
+- 1 × AA battery
+- 5 × adhesive mouse feet (the white oval pads in the photos)
+- Small screws and a screwdriver: the M185's own screw, 2 small screws for the retainer
+  plate and the screws that hold the two shells together
+- Optional: rainbow Apple logo decal
 
-## 1. Strip the M185
+<!-- TODO(author): list the exact screw types/sizes (PCB screw, retainer-plate screws, shell screws and how many), where the feet and the logo decal come from, and battery polarity. -->
 
-1. Remove the battery cover and the AA battery, and take out the USB nano receiver.
-2. Remove the M185's screw(s) and separate the top shell from the base.
-3. Lift out the PCB with the scroll wheel, the two microswitches, the optical sensor and
-   the power slide switch.
 
-<!-- TODO(author): add photos, and note which M185 parts are discarded (shell, scroll wheel
-     housing?) vs. reused, plus the M185 hardware revision you used. -->
+## Prepare the donor mouse
 
-## 2. Fit the electronics to the printed base
+### Step 1
 
-1. Seat the PCB into `base.stl`.
-2. Fit the battery in the battery compartment of the base.
+Remove the battery door and battery from the M185. The single screw holding the mouse together (circled) sits in the battery area; remove it.
 
-<!-- TODO(author): PCB orientation, screws used, how the sensor lines up with the base opening. -->
+<img src="../images/assembly/1_remove_screw_from_m185.jpg" width="520" alt="Step 1">
 
-## 3. Install the buttons
+### Step 2
 
-1. Place `left_button.stl` and `right_button.stl` in the top shell so each sits over its
-   microswitch.
-2. Fit `button_stop.stl` to retain the buttons.
+Separate the top and bottom halves of the M185 to expose the PCB. The red arrow marks the tab/catch on the left edge to release.
 
-<!-- TODO(author): confirm how the button bracket secures them, direction of travel, and
-     whether anything (e.g. the scroll wheel slot in the shell) needs separate handling. -->
+<img src="../images/assembly/2_separate_m185_shell_to_expose_pcb.jpg" width="520" alt="Step 2">
 
-## 4. Power switch
+### Step 3
 
-Fit `on_off_button.stl` so that it drives the M185's slide switch.
+Lift the PCB out of the lower shell, with the battery contact spring and wire still attached. The red arrow marks the scroll wheel, which comes off next.
 
-<!-- TODO(author): describe how the actuator fits; why two are printed. -->
+<img src="../images/assembly/3_pull_pcb_from_m185_shell.jpg" width="520" alt="Step 3">
 
-## 5. Close up
+### Step 4
 
-1. Join the top shell to the base.
-2. Fit `battery_cover_1.stl` and `battery_cover_2.stl` over the battery compartment.
-3. Insert the battery, and plug the USB receiver into the computer.
+Pull the scroll wheel out of its holder and set it aside. The printed mouse has no scroll wheel, so the wheel and its click switch are not used.
 
-<!-- TODO(author): fasteners vs. snap fit; how the shell and base are held together. -->
+<img src="../images/assembly/4_remove_scroll_wheel.jpg" width="520" alt="Step 4">
 
-## 6. Test
+## Install the electronics in the base
 
-Pair with the receiver (it is already paired in the donor mouse), check both buttons,
-the scroll wheel and the power switch.
+### Step 5
+
+Flip the PCB over. Slide the M185's power switch (SW10, circled) to the end of its travel in the direction of the arrow (**ON**).
+
+<img src="../images/assembly/5_slide_power_switch_to_side.jpg" width="520" alt="Step 5">
+
+### Step 6
+
+Take the printed power switch actuator (`on_off_button.stl`, circled) and `base.stl`.
+
+<img src="../images/assembly/6_get_3d_printed_power_switch.jpg" width="520" alt="Step 6">
+
+### Step 7
+
+Fit the printed switch into its slot in the base and slide it to the side (arrow), so it lines up with the PCB switch in the ON position.
+
+<img src="../images/assembly/7_install_power_switch_and_slide_to_side.jpg" width="520" alt="Step 7">
+
+### Step 8
+
+Lower the PCB into the base with the optical sensor over the sensor window. Seat the battery contact spring at the far end of the diagonal battery compartment, and lay the long contact wire along the compartment wall into the notches (red arrows).
+
+<img src="../images/assembly/8_install_pcb_in_bottom_shell.jpg" width="520" alt="Step 8">
+
+### Step 9
+
+Screw the PCB down with a single screw at the end of the battery compartment.
+
+<img src="../images/assembly/9_screw_down_pcb_in_bottom_shell.jpg" width="520" alt="Step 9">
+
+## Install the buttons in the top shell
+
+### Step 10
+
+Turn the top shell upside down. You need `left_button.stl`, `right_button.stl`, the retainer plate (`button_stop.stl`) and two small screws.
+
+<img src="../images/assembly/10_prepare_to_assemble_top_shell.jpg" width="520" alt="Step 10">
+
+### Step 11
+
+Drop the two buttons into their slots, then lay the retainer plate over them so its fingers interleave with the buttons' tabs.
+
+<img src="../images/assembly/11_install_buttons_and_retainer_plate.jpg" width="520" alt="Step 11">
+
+### Step 12
+
+Screw the plate down with the two screws. The tension matters: it should hold the buttons in place without binding them, and each button should still move freely and spring back.
+
+<img src="../images/assembly/12_screw_down_retainer_plate_proper_tension.jpg" width="520" alt="Step 12">
+
+## Close the mouse
+
+### Step 13
+
+You now have the two finished halves: the top shell with buttons, and the base with the PCB.
+
+<img src="../images/assembly/13_combine_two_shells.jpg" width="520" alt="Step 13">
+
+### Step 14
+
+Fit the halves together and screw them together from underneath. The self-adhesive feet (five oval pads) go on the underside.
+
+<img src="../images/assembly/14_screw_together_shells.jpg" width="520" alt="Step 14">
+
+### Step 15
+
+Install an AA battery in the diagonal compartment.
+
+<img src="../images/assembly/15_install_battery.jpg" width="520" alt="Step 15">
+
+### Step 16
+
+Assemble the battery door from its two printed parts, `battery_cover_1.stl` and `battery_cover_2.stl`.
+
+<img src="../images/assembly/16_combine_battery_door_pieces.jpg" width="520" alt="Step 16">
+
+### Step 17
+
+Fit the battery door into the compartment and latch it.
+
+<img src="../images/assembly/17_install_battery_door.jpg" width="520" alt="Step 17">
+
+## Done
+
+### Step 18
+
+Plug the M185's USB receiver into your computer. The finished mouse: two buttons, a Lisa-style body and (optional) a rainbow Apple logo decal on the embossed logo area.
+
+<img src="../images/assembly/18_assembly_complete.jpg" width="520" alt="Step 18">
 
 ## Troubleshooting
 
-<!-- TODO(author): common problems (sticky buttons, no click, cursor jitter from sensor height, etc.). -->
+<!-- TODO(author): common problems (sticky or noisy buttons, no click, cursor jitter from sensor height, mouse won't power on, etc.). -->

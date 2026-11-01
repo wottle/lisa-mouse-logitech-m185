@@ -8,7 +8,7 @@ mouse, this one has **two buttons**.
 > Unofficial fan project. Not affiliated with or endorsed by Apple Inc. or Logitech.
 > "Apple" and "Lisa" are trademarks of Apple Inc.; "Logitech" and "M185" are trademarks of Logitech.
 
-![Parts](images/plates/bambu_plate_2.png)
+![The finished Lisa Mouse](images/assembly/18_assembly_complete.jpg)
 
 ## What you need
 
@@ -17,9 +17,11 @@ mouse, this one has **two buttons**.
 | Logitech M185 wireless mouse | Donor for the electronics. |
 | 3D printer + PLA | Parts fit a 0.4 mm nozzle; see [docs/PRINTING.md](docs/PRINTING.md). |
 | Small Phillips screwdriver | For the M185's own screws. |
-| 1 × AA battery | As used by the M185. |
+| 1 × AA battery | Alkaline AA. |
+| 5 × adhesive mouse feet | White oval pads, on the underside. |
+| Small screws | PCB, button retainer plate and shell closure; see [docs/ASSEMBLY.md](docs/ASSEMBLY.md). |
 
-<!-- TODO(author): add any extra hardware (screws, glue, tape, etc.) and screw sizes. -->
+<!-- TODO(author): add exact screw types/sizes and sources for the feet and logo decal. -->
 
 ## Printed parts
 
@@ -32,13 +34,12 @@ design orientation (X × Y × Z, mm).
 | `top_shell.stl` **or** `top_shell_lisa_logo.stl` | 1 | 62.2 × 91.7 × 31.1 | The Lisa-style upper shell. The `_lisa_logo` variant has the embossed logo on top; the plain one is smooth. |
 | `left_button.stl` | 1 | 20.1 × 27.1 × 23.9 | Left button. |
 | `right_button.stl` | 1 | 23.9 × 27.1 × 19.5 | Right button. |
-| `button_stop.stl` | 1 | 35.6 × 16.1 × 3.9 | Button bracket / stop. |
-| `on_off_button.stl` | 2* | 12.0 × 7.2 × 6.0 | Power switch actuator. |
-| `battery_cover_1.stl` | 1 | 14.7 × 53.1 × 8.9 | Battery compartment cover. |
-| `battery_cover_2.stl` | 1 | 7.5 × 11.8 × 6.2 | Battery cover latch/clip. |
+| `button_stop.stl` | 1 | 35.6 × 16.1 × 3.9 | Retainer plate that holds both buttons in the top shell. |
+| `on_off_button.stl` | 1* | 12.0 × 7.2 × 6.0 | Power switch actuator, slides in the base to operate the M185 power switch. |
+| `battery_cover_1.stl` | 1 | 14.7 × 53.1 × 8.9 | Battery door (main plate). |
+| `battery_cover_2.stl` | 1 | 7.5 × 11.8 × 6.2 | Battery door (latch piece). |
 
-\* The supplied slicer projects print two; confirm how many you need.
-<!-- TODO(author): confirm quantities and the exact roles of button_stop, on_off_button and battery_cover_1/2. -->
+\* The supplied slicer projects print two, so there's a spare; only one is used in the build.
 
 Part previews are in [`images/`](images/).
 
