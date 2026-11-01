@@ -36,7 +36,7 @@ design orientation (X × Y × Z, mm).
 | `battery_cover_1.stl` | 1 | 14.7 × 53.1 × 8.9 | Battery door (main plate). |
 | `battery_cover_2.stl` | 1 | 7.5 × 11.8 × 6.2 | Battery door (latch piece). |
 
-\* The supplied slicer projects print two, so there's a spare; only one is used in the build.
+\* The supplied slicer projects print two, one that is slightly taller that fit better for me; only one is used in the build. Use the one that slides better when the PCB is screwed down.
 
 Part previews are in [`images/`](images/).
 
