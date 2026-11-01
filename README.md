@@ -5,9 +5,6 @@ A 3D-printed shell that turns a **Logitech M185** wireless mouse into a replica 
 reused; the printed parts replace the stock case. Unlike the original one-button Lisa
 mouse, this one has **two buttons**.
 
-> Unofficial fan project. Not affiliated with or endorsed by Apple Inc. or Logitech.
-> "Apple" and "Lisa" are trademarks of Apple Inc.; "Logitech" and "M185" are trademarks of Logitech.
-
 ![The finished Lisa Mouse](images/assembly/18_assembly_complete.jpg)
 
 ## What you need
