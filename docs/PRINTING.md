@@ -41,13 +41,9 @@ Each project is split into **two plates**: one that needs no supports, and one t
 | 2 | Top shell and the two buttons | Tree (auto) | ![](../images/plates/bambu_plate_2.png) | ![](../images/plates/creality_plate_2.png) |
 
 > **Notes**
-> - The projects contain both top-shell variants. Print only one: the logo version
->   (embossed Apple logo area) or the plain one.
+> - The plate 2 project files contain both top-shell variants (logo and plain); only one is
+>   set to print. Enable whichever you want and disable the other.
 > - The on/off button is on plate 1 twice. Only one is used; the other is a spare.
-> - The Creality project uses the final v4 top shell. The **Bambu project still uses the older
->   v3 top shell**; swap in `models/top_shell.stl` or `models/top_shell_lisa_logo.stl`
->   (top surface up, as in the plate preview) before printing.
-<!-- TODO(author): re-save the Bambu 3MF with the v4 shell and remove that note. -->
 
 ## Part-by-part orientation
 
