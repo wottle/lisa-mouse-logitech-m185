@@ -33,23 +33,21 @@ to be laid out by you if you slice them directly.
 | [`print/LisaMouse_BambuStudio_A1.3mf`](../print/LisaMouse_BambuStudio_A1.3mf) | Bambu Studio |
 | [`print/LisaMouse_CrealityPrint_K2Plus.3mf`](../print/LisaMouse_CrealityPrint_K2Plus.3mf) | Creality Print |
 
-> **Note:** these projects were saved before the final `top_shell_v4` model and still
-> reference the v3 top shell. Replace the shell object with `models/top_shell.stl` (or
-> `top_shell_lisa_logo.stl`) and re-orient it as in the project (top surface up).
-<!-- TODO(author): re-save the 3MFs with the v4 shell and remove this note. -->
+Each project is split into **two plates**: one that needs no supports, and one that does.
 
-### Plate layout
+| Plate | Contents | Supports | Bambu A1 | Creality K2 Plus |
+|-------|----------|----------|----------|------------------|
+| 1 | Base, button retainer plate, battery covers 1 and 2, on/off button | None | ![](../images/plates/bambu_plate_1.png) | ![](../images/plates/creality_plate_1.png) |
+| 2 | Top shell and the two buttons | Tree (auto) | ![](../images/plates/bambu_plate_2.png) | ![](../images/plates/creality_plate_2.png) |
 
-| Plate | Bambu A1 | Creality K2 Plus |
-|-------|----------|------------------|
-| 1 | ![](../images/plates/bambu_plate_1.png) | ![](../images/plates/creality_plate_1.png) |
-| 2 | ![](../images/plates/bambu_plate_2.png) | ![](../images/plates/creality_plate_2.png) |
-| 3 | ![](../images/plates/bambu_plate_3.png) | ![](../images/plates/creality_plate_3.png) |
-
-Bambu project: plate 1 = base, button stop, on/off buttons, battery cover 2;
-plate 2 = top shell (logo) and buttons; plate 3 = battery cover 1.
-Creality project: plate 1 = base, on/off buttons, battery covers, left button;
-plate 2 = button variants and button stop; plate 3 = top shell (logo).
+> **Notes**
+> - The projects contain both top-shell variants. Print only one: the logo version
+>   (embossed Apple logo area) or the plain one.
+> - The on/off button is on plate 1 twice. Only one is used; the other is a spare.
+> - The Creality project uses the final v4 top shell. The **Bambu project still uses the older
+>   v3 top shell**; swap in `models/top_shell.stl` or `models/top_shell_lisa_logo.stl`
+>   (top surface up, as in the plate preview) before printing.
+<!-- TODO(author): re-save the Bambu 3MF with the v4 shell and remove that note. -->
 
 ## Part-by-part orientation
 
@@ -83,7 +81,7 @@ Pick one, in order of finish quality:
    - Because the underside is sloped, expect **many filament changes early in the print**
      if you use a separate support-interface filament.
 
-> The top shell orientation in the slicer projects is the "top face up, level top" setup.
+> The top shell in the slicer projects is set up for the single-material "top face up, level top" option.
 
 ## Fit
 

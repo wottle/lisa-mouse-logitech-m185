@@ -12,11 +12,12 @@ Photos below show the full build, in order. Part names refer to the files in
   against the photos before printing.
 - 1 × AA battery
 - 5 × adhesive mouse feet (the white oval pads in the photos)
-- Small screws and a screwdriver: the M185's own screw, 2 small screws for the retainer
-  plate and the screws that hold the two shells together
+- **M3 screws** and a screwdriver:
+  - shorter M3 screws for the PCB (1) and the button retainer plate (2)
+  - longer M3 screws to hold the two shells together
 - Optional: rainbow Apple logo decal
 
-<!-- TODO(author): list the exact screw types/sizes (PCB screw, retainer-plate screws, shell screws and how many), where the feet and the logo decal come from, and battery polarity. -->
+<!-- TODO(author): list the exact M3 screw lengths and counts (PCB and retainer: short; shell: longer), screw head type, where the feet and the logo decal come from, and battery polarity. -->
 
 
 ## Prepare the donor mouse

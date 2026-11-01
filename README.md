@@ -16,9 +16,9 @@ mouse, this one has **two buttons**.
 | Small Phillips screwdriver | For the M185's own screws. |
 | 1 × AA battery | Alkaline AA. |
 | 5 × adhesive mouse feet | White oval pads, on the underside. |
-| Small screws | PCB, button retainer plate and shell closure; see [docs/ASSEMBLY.md](docs/ASSEMBLY.md). |
+| M3 screws | Short ones for the PCB and button retainer plate, longer ones for closing the shells; see [docs/ASSEMBLY.md](docs/ASSEMBLY.md). |
 
-<!-- TODO(author): add exact screw types/sizes and sources for the feet and logo decal. -->
+<!-- TODO(author): add exact M3 screw lengths and sources for the feet and logo decal. -->
 
 ## Printed parts
 
