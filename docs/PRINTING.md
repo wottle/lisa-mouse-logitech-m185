@@ -41,7 +41,7 @@ Each project is split into **two plates**: one that needs no supports, and one t
 | 2 (*Supports Needed*) | Top shell and the two buttons | Normal (auto) | ![](../images/plates/bambu_plate_2.png) | ![](../images/plates/creality_plate_2.png) |
 
 > **Notes**
-> - The plate 2 project files contain both top-shell variants (logo and plain); only one is
+> - The plate 2 project files contain both top-shell variants ("Lisa" wordmark and plain); only one is
 >   set to print. Enable whichever you want and disable the other.
 > - The on/off button is on plate 1 twice. Only one is used; the other is a spare.
 

@@ -22,7 +22,7 @@ Photos below show the full build, in order. Part names refer to the files in
 
 - Optional: rainbow Apple logo decal (if printing the blank top piece - this logo was taken from a damaged PowerMac 6100 case).
 
-<!-- TODO(author): confirm the case screw count, the source of the logo decal, and battery polarity. -->
+<!-- TODO(author): confirm the case screw count, and battery polarity. -->
 
 
 ## Prepare the donor mouse
@@ -139,7 +139,12 @@ Fit the battery door into the compartment and latch it.
 
 ### Step 18
 
-Plug the M185's USB receiver into your computer. The finished mouse: two buttons, a Lisa-style body and (optional) a rainbow Apple logo decal on the embossed logo area.
+Plug the M185's USB receiver into your computer. The finished mouse has two buttons and a Lisa-style body. Two finishes are shown:
 
-<img src="../images/assembly/18_assembly_complete.jpg" width="520" alt="Step 18">
+- **Lisa logo shell** (`top_shell_lisa_logo.stl`): the embossed "Lisa" wordmark is part of the print, with no decal needed.
+- **Plain shell** (`top_shell.stl`) with an optional rainbow Apple logo decal.
+
+<img src="../images/assembly/18a_assembly_complete_lisa_logo.jpg" width="520" alt="Finished mouse, Lisa logo shell">
+
+<img src="../images/assembly/18_assembly_complete.jpg" width="520" alt="Finished mouse, plain shell with Apple logo decal">
 

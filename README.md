@@ -5,7 +5,7 @@ A 3D-printed shell that turns a **Logitech M185** wireless mouse into a replica 
 reused; the printed parts replace the stock case. Unlike the original one-button Lisa
 mouse, this one has **two buttons**.
 
-![The finished Lisa Mouse](images/assembly/18_assembly_complete.jpg)
+![The finished Lisa Mouse, Lisa logo version](images/assembly/18a_assembly_complete_lisa_logo.jpg)
 
 ## What you need
 
@@ -18,7 +18,6 @@ mouse, this one has **two buttons**.
 | PTFE mouse slides (optional) | Self-adhesive pads on the underside for smoother gliding; use any you like. |
 | M3 screws | 1 × M3×4 flat head (PCB), 2 × M3×6 countersunk (button retainer), 2 × M3×8 countersunk (case); see [docs/ASSEMBLY.md](docs/ASSEMBLY.md). |
 
-<!-- TODO(author): add the source of the logo decal. -->
 
 ## Printed parts
 
@@ -28,7 +27,7 @@ design orientation (X × Y × Z, mm).
 | File | Qty | Size (mm) | Purpose |
 |------|:---:|-----------|---------|
 | `base.stl` | 1 | 57.7 × 84.8 × 18.1 | Bottom plate; holds the M185 board and battery. |
-| `top_shell.stl` **or** `top_shell_lisa_logo.stl` | 1 | 62.2 × 91.7 × 31.1 | The Lisa-style upper shell. The `_lisa_logo` variant has the embossed logo on top; the plain one is smooth. |
+| `top_shell.stl` **or** `top_shell_lisa_logo.stl` | 1 | 62.2 × 91.7 × 31.1 | The Lisa-style upper shell. The `_lisa_logo` variant has an embossed "Lisa" wordmark on top; the plain one is smooth (the photos also show it with an Apple logo decal). |
 | `left_button.stl` | 1 | 20.1 × 27.1 × 23.9 | Left button. |
 | `right_button.stl` | 1 | 23.9 × 27.1 × 19.5 | Right button. |
 | `button_stop.stl` | 1 | 35.6 × 16.1 × 3.9 | Retainer plate that holds both buttons in the top shell. |
