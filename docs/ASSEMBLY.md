@@ -7,7 +7,15 @@ Photos below show the full build, in order. Part names refer to the files in
 
 - The printed parts ([PRINTING.md](PRINTING.md)): base, top shell, left and right buttons,
   button stop (retainer plate), on/off button, battery covers 1 and 2
-- A **Logitech M185** wireless mouse. The photos use a PCB marked *AVALON 22 Single,
+- A **genuine Logitech M185** wireless mouse.
+
+  > **⚠️ Make sure it's legitimate.** Discount sites (Temu, AliExpress, etc.) sell knock-off
+  > mice that look like the M185 but have a cheap, incompatible PCB inside. These will not
+  > fit the printed base or work with this design. Buy from the Amazon Logitech store
+  > (or another authorized seller); it isn't worth saving a few dollars on a mouse you
+  > can't use.
+
+  The photos use a PCB marked *AVALON 22 Single,
   210-002552 REV003*. Other board revisions may have different layouts, so check yours
   against the photos before printing.
 - 1 × AA battery
@@ -121,6 +129,12 @@ Fit the halves together and screw them together from underneath with the M3×8 c
 
 Install an AA battery in the diagonal compartment.
 
+> **Careful with the positive contact wire.** The metal wire that the battery's positive
+> nub presses against can get pushed up and out of place when you insert the battery. To
+> avoid this, push the battery **against the spring at the negative end first**, so the
+> positive nub doesn't force the wire up as it goes in. You can also put a drop of
+> **superglue** on the wire to hold it in place once everything is assembled.
+
 <img src="../images/assembly/15_install_battery.jpg" width="520" alt="Step 15">
 
 ### Step 16
@@ -148,3 +162,13 @@ Plug the M185's USB receiver into your computer. The finished mouse has two butt
 
 <img src="../images/assembly/18_assembly_complete.jpg" width="520" alt="Finished mouse, plain shell with Apple logo decal">
 
+## Troubleshooting
+
+**The mouse doesn't work after inserting the battery and switching it on.** Look into the
+battery compartment: the metal end piece (the positive contact wire) has probably been
+pushed up and out of the way. Press it back into its notches, then re-insert the battery
+as described in Step 15 (push against the negative spring first), or secure the wire with a
+drop of superglue.
+
+**Nothing works, and the board doesn't match the photos.** Check that the mouse is a genuine
+Logitech M185 with the PCB shown in this guide (see the warning at the top).

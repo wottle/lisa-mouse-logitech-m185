@@ -11,13 +11,19 @@ mouse, this one has **two buttons**.
 
 | Item | Notes |
 |------|-------|
-| Logitech M185 wireless mouse | Donor for the electronics. |
+| **Genuine** Logitech M185 wireless mouse | Donor for the electronics. See the warning below. |
 | 3D printer + PLA | Parts fit a 0.4 mm nozzle; see [docs/PRINTING.md](docs/PRINTING.md). |
 | Small Phillips screwdriver | For the M185's own screws. |
 | 1 × AA battery | Alkaline AA. |
 | PTFE mouse slides (optional) | Self-adhesive pads on the underside for smoother gliding; use any you like. |
 | M3 screws | 1 × M3×4 flat head (PCB), 2 × M3×6 countersunk (button retainer), 2 × M3×8 countersunk (case); see [docs/ASSEMBLY.md](docs/ASSEMBLY.md). |
 
+
+> **⚠️ Buy a genuine Logitech M185.** Discount marketplaces (Temu, AliExpress and the like)
+> sell knock-off mice made to look like the M185 but with a cheap, incompatible PCB inside.
+> The printed parts are designed around the real M185 board and will not work with it.
+> Buy from the Amazon Logitech store (or another authorized Logitech seller). Saving a few
+> dollars isn't worth ending up with a mouse you can't use.
 
 ## Printed parts
 
