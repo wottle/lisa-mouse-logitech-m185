@@ -65,15 +65,16 @@ scripts/    build_models.py — regenerates models/ and images/ from the source 
 
 This project is a remix of two existing models. Thank you to their creators:
 
-- **Apple Lisa mouse** — the original Lisa mouse model that the outer shell is based on:
+- **Apple Lisa mouse** by Stephen Arsenault (Thingiverse user StephenLulz) — the model of the
+  original Lisa mouse that the outer shell is based on:
   <https://www.thingiverse.com/thing:6547918>
-- **Amiga Mouse (Logitech M185)** — the inner mounting for the M185 electronics comes from
-  this model: <https://www.printables.com/model/1137373-amiga-mouse-logitech-m185>
+- **Amiga Mouse (Logitech M185)** by TomekB_239528 on Printables — the inner mounting for the
+  M185 electronics comes from this model: <https://www.printables.com/model/1137373-amiga-mouse-logitech-m185>
 
 The Lisa shell was combined with the Amiga mouse's M185 internal mounting, then modified
 into the two-button design in this repository.
 
-<!-- TODO(author): add each original creator's name and the license each model uses. The remix must be licensed compatibly with both (CC BY-NC-SA 4.0 here requires the originals to allow it); adjust LICENSE if not. -->
+<!-- TODO(author): add the license each original model uses. The remix must be licensed compatibly with both (CC BY-NC-SA 4.0 here requires the originals to allow it); adjust LICENSE if not. -->
 
 ## License
 
