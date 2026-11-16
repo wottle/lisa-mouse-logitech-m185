@@ -24,6 +24,10 @@ Any FDM printer with roughly a 100 × 100 mm bed can print every part.
 
 ## Slicer projects
 
+> **Note:** the slicer projects still contain the **v1** buttons and retainer plate. Until they are
+> re-saved, replace those three parts with `left_button.stl`, `right_button.stl` and `button_stop.stl`
+> from `models/`, keeping the same orientation. Print the v2 retainer flat side down.
+
 Open one of these rather than the bare STLs: they carry the **print orientation**,
 supports and plate arrangement. The STLs in `models/` are in design orientation and need
 to be laid out by you if you slice them directly.

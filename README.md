@@ -16,7 +16,7 @@ mouse, this one has **two buttons**.
 | Small Phillips screwdriver | For the M185's own screws. |
 | 1 × AA battery | Alkaline AA. |
 | PTFE mouse slides (optional) | Self-adhesive pads on the underside for smoother gliding; use any you like. |
-| M3 screws | 1 × M3×4 flat head (PCB), 2 × M3×6 countersunk (button retainer), 2 × M3×8 countersunk (case); see [docs/ASSEMBLY.md](docs/ASSEMBLY.md). |
+| M3 screws | 1 × M3×4 flat head (PCB), 2 × M3×6 countersunk (button retainer), 4 × M3×8 countersunk (2 case, 2 button strikers); see [docs/ASSEMBLY.md](docs/ASSEMBLY.md). |
 
 
 > **⚠️ Buy a genuine Logitech M185.** Discount marketplaces (Temu, AliExpress and the like)
@@ -34,14 +34,20 @@ design orientation (X × Y × Z, mm).
 |------|:---:|-----------|---------|
 | `base.stl` | 1 | 57.7 × 84.8 × 18.1 | Bottom plate; holds the M185 board and battery. |
 | `top_shell.stl` **or** `top_shell_lisa_logo.stl` | 1 | 62.2 × 91.7 × 31.1 | The Lisa-style upper shell. The `_lisa_logo` variant has an embossed "Lisa" wordmark on top; the plain one is smooth (the photos also show it with an Apple logo decal). |
-| `left_button.stl` | 1 | 20.1 × 27.1 × 23.9 | Left button. |
-| `right_button.stl` | 1 | 23.9 × 27.1 × 19.5 | Right button. |
-| `button_stop.stl` | 1 | 35.6 × 16.1 × 3.9 | Retainer plate that holds both buttons in the top shell. |
+| `left_button.stl` | 1 | 16.7 × 27.2 × 23.9 | Left button, with a post for its striker screw. |
+| `right_button.stl` | 1 | 23.9 × 27.2 × 16.7 | Right button, with a post for its striker screw. |
+| `button_stop.stl` | 1 | 35.6 × 16.3 × 2.6 | Retainer plate that holds both buttons in the top shell. |
 | `on_off_button.stl` | 1* | 12.0 × 7.2 × 6.0 | Power switch actuator, slides in the base to operate the M185 power switch. |
 | `battery_cover_1.stl` | 1 | 14.7 × 53.1 × 8.9 | Battery door (main plate). |
 | `battery_cover_2.stl` | 1 | 7.5 × 11.8 × 6.2 | Battery door (latch piece). |
 
 \* The supplied slicer projects print two, one that is slightly taller that fit better for me; only one is used in the build. Use the one that slides better when the PCB is screwed down.
+
+The buttons and retainer are the **v2** design: each button's click point is set with an M3 screw
+instead of a fixed printed plunger, and the hinge has a fixed small clearance instead of being set by
+how hard the retainer is screwed down. The original v1 parts are kept in [`models/v1/`](models/v1/).
+
+![v2 buttons and retainer](images/v2_buttons.png)
 
 Part previews are in [`images/`](images/).
 
@@ -59,6 +65,7 @@ print/      Slicer projects with plate layout, orientation and settings
 docs/       Printing and assembly instructions
 images/     Part previews and slicer plate previews
 scripts/    build_models.py — regenerates models/ and images/ from the source OBJ/STL export
+            adjustable_buttons.py — builds the v2 buttons and retainer from models/v1
 ```
 
 ## Credits

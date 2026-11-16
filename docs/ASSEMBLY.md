@@ -26,6 +26,7 @@ Photos below show the full build, in order. Part names refer to the files in
   |-----|-------|:---:|
   | PCB (step 9) | M3×4 flat head | 1 |
   | Button retainer plate (step 12) | M3×6 countersunk | 2 |
+  | Button strikers (step 10) | M3×8 countersunk | 2 |
   | Joining the shells (step 14) | M3×8 countersunk | 2 |
 
 - Optional: rainbow Apple logo decal (if printing the blank top piece - this logo was taken from a damaged PowerMac 6100 case).
@@ -95,7 +96,7 @@ Screw the PCB down with a single M3×4 flat head screw at the end of the battery
 
 ### Step 10
 
-Turn the top shell upside down. You need `left_button.stl`, `right_button.stl`, the retainer plate (`button_stop.stl`) and two M3×6 countersunk screws. Not the retainer plate has little nubs on one side.  Those should be installed to face toward the button arms.  
+Turn the top shell upside down. You need `left_button.stl`, `right_button.stl`, the retainer plate (`button_stop.stl`), two M3×6 countersunk screws and two M3×8 countersunk screws. Drive an M3×8 into the post under each button, head pointing away from the button face (toward the switch), stopping about 1 mm short of fully seated. These two screws press the M185's switches and set each button's click point. The retainer plate has a flat side with countersinks and a stepped side; the stepped side faces the shell.
 
 <img src="../images/assembly/10_prepare_to_assemble_top_shell.jpg" width="520" alt="Step 10">
 
@@ -107,7 +108,7 @@ Drop the two buttons into their slots, then lay the retainer plate over them so 
 
 ### Step 12
 
-Screw the plate down with the two M3×6 countersunk screws. The tension matters: it should hold the buttons in place without binding them, and each button should still move freely and spring back. I tightened the retaining clip down until there was a bit of resistance, then I backed it off until the buttons fall with just gravity when pressed up.  
+Screw the plate down with the two M3×6 countersunk screws, fully. The plate seats on the shell's ledge and leaves the hinge pins a small fixed clearance, so there is no tension to set. Each button should move freely and drop under gravity when pushed up; if one binds, sand its hinge pin lightly.
 
 <img src="../images/assembly/12_screw_down_retainer_plate_proper_tension.jpg" width="520" alt="Step 12">
 
@@ -122,6 +123,8 @@ You now have the two finished halves: the top shell with buttons, and the base w
 ### Step 14
 
 Fit the halves together and screw them together from underneath with the M3×8 countersunk screws. If you're using PTFE slides, stick them on the underside.
+
+Test both buttons with the case screws fully tight. Each striker screw sets its button: out = longer (clicks sooner), in = shorter. Aim for no free play and no pre-click. If a button feels stuck with no click, its switch is being held down: open the shell and turn that button's striker screw in about a quarter turn. Tightening the case screws lowers the strikers slightly, so always judge the adjustment with the case closed up.
 
 <img src="../images/assembly/14_screw_together_shells.jpg" width="520" alt="Step 14">
 
