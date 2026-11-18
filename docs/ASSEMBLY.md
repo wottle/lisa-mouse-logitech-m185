@@ -19,6 +19,7 @@ Photos below show the full build, in order. Part names refer to the files in
   210-002552 REV003*. Other board revisions may have different layouts, so check yours
   against the photos before printing.
 - 1 × AA battery
+- Optional: silicone grease for the button hinges (Step 11).
 - Optional: self-adhesive PTFE mouse slides for smoother gliding (any you like; the photos use five white oval pads)
 - Screwdriver and **M3 screws**:
 
@@ -30,7 +31,7 @@ Photos below show the full build, in order. Part names refer to the files in
   | Button strikers (step 10) | M3×8 countersunk | 2 |
   | Joining the shells (step 14) | M3×8 countersunk | 2 |
 
-- Optional: rainbow Apple logo decal (if printing the blank top piece - this logo was taken from a damaged PowerMac 6100 case).
+- Optional: rainbow Apple logo decal, for the Apple logo plate on the plain shell (the one in the photos was taken from a damaged PowerMac 6100 case).
 
 <!-- TODO(author): confirm the case screw count, and battery polarity. -->
 
@@ -105,6 +106,8 @@ Turn the top shell upside down. You need `left_button.stl`, `right_button.stl`, 
 
 Drop the two buttons into their slots, then lay the retainer plate over them so its fingers interleave with the buttons' tabs.
 
+Optional: before fitting the retainer, put a thin film of **silicone grease** on the hinge pins (where they sit in the shell and where the retainer's fingers and spring pads touch them) and on the sides of the buttons next to the retainer fingers. The buttons are designed to run free without it, but it keeps them from catching on a rough or slightly oversized print. Use a silicone grease rather than a petroleum-based one, which can attack some plastics. Use very little, and keep it away from the switches and the PCB.
+
 <img src="../images/assembly/11_install_buttons_and_retainer_plate.jpg" width="520" alt="Step 11">
 
 ### Step 12
@@ -125,7 +128,7 @@ You now have the two finished halves: the top shell with buttons, and the base w
 
 With the rear hooked in, screw the halves together from underneath with the two M3×8 countersunk screws at the **front** corners (v1 had them at the rear; the photo shows v1). If you're using PTFE slides, stick them on the underside.
 
-Test both buttons with the case screws fully tight. Each striker screw sets its button: out = longer (clicks sooner), in = shorter. Aim for no free play and no pre-click. If a button feels stuck with no click, its switch is being held down: open the shell and turn that button's striker screw in about a quarter turn. Tightening the case screws lowers the strikers slightly, so always judge the adjustment with the case closed up.
+Test both buttons with the case screws fully tight. Each striker screw sets its button: out = longer (clicks sooner), in = shorter. Each button can lift a little (about 0.35 mm at the striker) before the front edge of its flange stops against the shell; lengthen each striker until its button sits up on that stop without clicking. Aim for no free play and no pre-click. If a button feels stuck with no click, its switch is being held down: open the shell and turn that button's striker screw in about a quarter turn. Tightening the case screws lowers the strikers slightly, so always judge the adjustment with the case closed up.
 
 <img src="../images/assembly/14_screw_together_shells.jpg" width="520" alt="Step 14">
 
@@ -159,8 +162,10 @@ Fit the battery door into the compartment and latch it.
 
 Plug the M185's USB receiver into your computer. The finished mouse has two buttons and a Lisa-style body. Two finishes are shown:
 
-- **Lisa logo shell** (`top_shell_lisa_logo.stl`): the embossed "Lisa" wordmark is part of the print, with no decal needed.
-- **Plain shell** (`top_shell.stl`) with an optional rainbow Apple logo decal.
+- **Lisa logo shell** (`top_shell_lisa_logo.stl`) with the "Lisa" wordmark plate (`lisa_logo_plate.stl`) glued into its recess.
+- **Plain shell** (`top_shell.stl`) with an Apple logo plate glued into its recess (`apple_logo_plate_blank.stl` is a template, or apply a logo decal to it).
+
+The photos show the v1 shells, which had the wordmark moulded in or a shallow recess for a decal.
 
 <img src="../images/assembly/18a_assembly_complete_lisa_logo.jpg" width="520" alt="Finished mouse, Lisa logo shell">
 

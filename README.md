@@ -15,6 +15,7 @@ mouse, this one has **two buttons**.
 | 3D printer + PLA | Parts fit a 0.4 mm nozzle; see [docs/PRINTING.md](docs/PRINTING.md). |
 | Small Phillips screwdriver | For the M185's own screws. |
 | 1 × AA battery | Alkaline AA. |
+| Silicone grease (optional) | A thin film on the button hinge pins and retainer; see [docs/ASSEMBLY.md](docs/ASSEMBLY.md). |
 | PTFE mouse slides (optional) | Self-adhesive pads on the underside for smoother gliding; use any you like. |
 | M3 screws | 1 × M3×4 flat head (PCB rear), 1 × M3×6 (PCB front; add a washer if the head is small), 2 × M3×6 countersunk (button retainer), 4 × M3×8 countersunk (2 case, 2 button strikers); see [docs/ASSEMBLY.md](docs/ASSEMBLY.md). |
 
@@ -36,19 +37,21 @@ design orientation (X × Y × Z, mm).
 | `top_shell.stl` **or** `top_shell_lisa_logo.stl` | 1 | 62.2 × 91.7 × 31.1 | The Lisa-style upper shell. Each has a 1.4 mm deep recess on top for a separately printed logo plate: the `_lisa_logo` variant takes the wide Lisa plate, the plain one takes the square Apple logo plate. |
 | `lisa_logo_plate.stl` | 1 | 21.4 × 9.8 × 1.4 | Plate with the raised "Lisa" wordmark for `top_shell_lisa_logo.stl`. `lisa_logo_plate_blank.stl` is the same plate without the wordmark, as a template for your own. |
 | `apple_logo_plate_blank.stl` | 1 | 9.9 × 9.9 × 1.4 | Blank plate for the recess in `top_shell.stl`, as a template for an Apple logo. It is the same plate as on the [Macintosh mouse](https://github.com/wottle/mac-mouse-logitech-m185), so a logo plate made for that fits here. |
-| `left_button.stl` | 1 | 16.7 × 27.2 × 23.9 | Left button, with a post for its striker screw. |
-| `right_button.stl` | 1 | 23.9 × 27.2 × 16.7 | Right button, with a post for its striker screw. |
-| `button_stop.stl` | 1 | 35.6 × 16.3 × 2.6 | Retainer plate that holds both buttons in the top shell. |
+| `left_button.stl` | 1 | 17.7 × 27.2 × 23.9 | Left button, with a post for its striker screw. |
+| `right_button.stl` | 1 | 23.9 × 27.2 × 17.7 | Right button, with a post for its striker screw. |
+| `button_stop.stl` | 1 | 35.6 × 16.2 × 2.6 | Retainer plate that holds both buttons in the top shell. |
 | `on_off_button.stl` | 1* | 12.0 × 7.2 × 6.0 | Power switch actuator, slides in the base to operate the M185 power switch. |
 | `battery_cover_1.stl` | 1 | 14.7 × 53.1 × 8.9 | Battery door (main plate). |
 | `battery_cover_2.stl` | 1 | 7.5 × 11.8 × 6.2 | Battery door (latch piece). |
 
-\* The supplied slicer projects print two, one that is slightly taller that fit better for me; only one is used in the build. Use the one that slides better when the PCB is screwed down.
+\* The Creality slicer project uses a slightly smaller variant of the on/off button. Use whichever slides better when the PCB is screwed down.
 
 The buttons and retainer are the **v2** design: each button's click point is set with an M3 screw
 instead of a fixed printed plunger. The retainer is screwed down fully; two thin spring fingers on it
 press the inner end of each hinge pin onto its seat, so the buttons cannot sag toward the middle of the
-mouse, and the four rigid fingers are only a backstop. The button caps stand 1 mm higher than v1. The original v1 parts are kept in [`models/v1/`](models/v1/).
+mouse, and the four rigid fingers are only a backstop. The button caps stand 1 mm higher than v1, and
+each button keeps 0.35 mm from the shell through its whole travel, so neither drags or sticks down
+(the v1 left button rubbed on the rim under its opening). The original v1 parts are kept in [`models/v1/`](models/v1/).
 
 The case is **v2** as well: the two case screws moved from the rear corners to the front corners,
 and the rear of the base now hooks onto two tabs inside the shell, so both ends are held shut.

@@ -124,17 +124,17 @@ Left/right mean the user's left/right. In S the left button is at **+x**.
 
 ## Status
 
-Branch `adjustable-buttons`. Everything after commit `5fb0fe3` is uncommitted and **not print-tested**:
-case redesign, logo plates, spring retainer, taller buttons, PCB standoff and relief. The first v2
-buttons (commit `5fb0fe3`) were printed: left button sagged, retainer bound when tight, buttons sat low,
-PCB front snagged. Those reports drove the current revision.
+Branch `adjustable-buttons`, printed and working (2026-11-17): case redesign, logo plates, spring
+retainer, taller and free-running buttons, PCB standoff and relief. Mike greases the hinge pins and
+retainer with silicone grease (documented as optional in ASSEMBLY step 11). The slicer projects in
+`print/` hold the v2 parts, both shells on their side with hand-painted supports; plate 2 has the logo
+plates plus Mike's own Apple badge (not in `models/`). The Creality project's on/off button is a
+smaller variant not in `models/`. `images/plates/*_1/2.png` are the thumbnails from the 3MFs.
 
 Open items:
-- Print-test the spring fingers (tune `SPRING_PRELOAD` / `SPRING_T`) and the rear tabs.
-- On-side print orientation of the shell has not been checked for supports.
-- Re-save `print/*.3mf` with the v2 parts, then drop the "still contain v1" notes in `docs/PRINTING.md`.
-- Retake assembly photos for steps 9, 12, 13, 14.
-- Lisa wordmark plate: raised relief today; a flush two-colour version is a small change.
+- Merge `adjustable-buttons` into `main` (Mike's call).
+- Retake assembly photos for steps 9, 12, 13, 14 and 18 (they show v1; the text says so).
+- Colour recommendations (TODO in `docs/PRINTING.md`).
 
 ## Working conventions
 

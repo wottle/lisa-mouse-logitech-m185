@@ -3,7 +3,7 @@
 ## Settings used
 
 These come from the slicer projects in [`print/`](../print/) and were used for the
-prototype build.
+v2 build.
 
 | Setting | Value |
 |---------|-------|
@@ -13,20 +13,16 @@ prototype build.
 | Walls | 2 |
 | Top / bottom layers | 5 / 3 |
 | Infill | 15 %, grid |
-| Supports | Plate 2 only: normal (auto), not tree; 30° threshold |
+| Supports | Tree (auto), 30° threshold; supports painted on by hand for the top shells (see below) |
 | Brim | Auto |
 | Seam | Aligned |
 | Material | PLA (PolyTerra PLA used for the prototype) |
-| Nozzle / bed temp | 220 °C / 65 °C |
+| Nozzle / bed temp | 220 °C; bed 65 °C (Bambu A1), 50 °C (Creality K2 Plus) |
 | Bed | Textured PEI |
 
 Any FDM printer with roughly a 100 × 100 mm bed can print every part.
 
 ## Slicer projects
-
-> **Note:** the slicer projects still contain the **v1** buttons and retainer plate. Until they are
-> re-saved, replace those three parts with `left_button.stl`, `right_button.stl` and `button_stop.stl`
-> from `models/`, keeping the same orientation. Print the v2 retainer flat side down.
 
 Open one of these rather than the bare STLs: they carry the **print orientation**,
 supports and plate arrangement. The STLs in `models/` are in design orientation and need
@@ -37,17 +33,19 @@ to be laid out by you if you slice them directly.
 | [`print/LisaMouse_BambuStudio_A1.3mf`](../print/LisaMouse_BambuStudio_A1.3mf) | Bambu Studio |
 | [`print/LisaMouse_CrealityPrint_K2Plus.3mf`](../print/LisaMouse_CrealityPrint_K2Plus.3mf) | Creality Print |
 
-Each project is split into **two plates**: one that needs no supports, and one that does.
+Both projects hold the v2 parts and are split into **two plates**:
 
-| Plate | Contents | Supports | Bambu A1 | Creality K2 Plus |
-|-------|----------|----------|----------|------------------|
-| 1 (*No Support Needed*) | Base, button retainer plate, battery covers 1 and 2, on/off button | None | ![](../images/plates/bambu_plate_1.png) | ![](../images/plates/creality_plate_1.png) |
-| 2 (*Supports Needed*) | Top shell and the two buttons | Normal (auto) | ![](../images/plates/bambu_plate_2.png) | ![](../images/plates/creality_plate_2.png) |
+| Plate | Contents | Bambu A1 | Creality K2 Plus |
+|-------|----------|----------|------------------|
+| 1 (*Main mouse parts* / *Pick One Top Shell*) | Base, both top shells, both buttons, button retainer plate, battery covers 1 and 2, on/off button | ![](../images/plates/bambu_plate_1.png) | ![](../images/plates/creality_plate_1.png) |
+| 2 (*Logo Plates* / *Logo Badges*) | Lisa logo plate and an Apple logo badge | ![](../images/plates/bambu_plate_2.png) | ![](../images/plates/creality_plate_2.png) |
 
 > **Notes**
-> - The plate 2 project files contain both top-shell variants ("Lisa" wordmark and plain); only one is
->   set to print. Enable whichever you want and disable the other.
-> - The on/off button is on plate 1 twice. Only one is used; the other is a spare.
+> - Plate 1 holds both top-shell variants (Lisa recess and Apple recess). Print only one: delete or
+>   disable the other before slicing.
+> - Print only the logo plate that matches your shell.
+> - Each project has one on/off button. The Creality project uses a slightly smaller variant than
+>   `models/on_off_button.stl`; use whichever slides better when the PCB is screwed down.
 
 ## Part-by-part orientation
 
@@ -85,9 +83,8 @@ Pick one, in order of finish quality:
    parallel, so the shell can stand on either side. The top surface is then built from layer
    edges instead of resting on supports; the inside of the upper side wall needs supports.
 
-> The top shell in the slicer projects is set up for the single-material "top face up, level top" option,
-> and the projects still contain the v1 base and top shell. Re-import `base.stl` and the top shell from
-> `models/` to print the v2 case.
+> The top shells in the slicer projects are set up for option 4, **on their side**, with supports
+> painted on by hand only where the inside needs them.
 
 ### Logo plates
 Print the logo plate flat, show face up (the bevelled side is the back), and glue it into the recess in
@@ -97,4 +94,7 @@ the top shell. With a multi-colour printer, paint or split the plate in the slic
 
 - Parts that mate (buttons in the shell, covers on the base) are tight-tolerance. If your
   printer runs a little over-sized, test-fit the buttons first and sand lightly.
-<!-- TODO(author): add tolerance/fit findings (the 3MFs contain button clearance experiments of -0.4 / -0.3 / +0.2 mm) and colour recommendations. -->
+- The v2 buttons keep 0.35 mm from the shell everywhere except the hinge and the front edge of the
+  flange, which is the stop when the button lifts. If a button still catches, see Step 14 in
+  [ASSEMBLY.md](ASSEMBLY.md).
+<!-- TODO(author): colour recommendations. -->
