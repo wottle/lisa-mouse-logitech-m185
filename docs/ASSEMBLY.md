@@ -24,7 +24,8 @@ Photos below show the full build, in order. Part names refer to the files in
 
   | Use | Screw | Qty |
   |-----|-------|:---:|
-  | PCB (step 9) | M3×4 flat head | 1 |
+  | PCB rear (step 9) | M3×4 flat head | 1 |
+  | PCB front (step 9) | M3×6, plus a washer if the head is small | 1 |
   | Button retainer plate (step 12) | M3×6 countersunk | 2 |
   | Button strikers (step 10) | M3×8 countersunk | 2 |
   | Joining the shells (step 14) | M3×8 countersunk | 2 |
@@ -88,7 +89,7 @@ Lower the PCB into the base with the optical sensor over the sensor window. Seat
 
 ### Step 9
 
-Screw the PCB down with a single M3×4 flat head screw at the end of the battery compartment.
+Screw the PCB down with an M3×4 flat head screw at the end of the battery compartment. Then fasten the front: drive an M3×6 into the standoff in the board's scroll-wheel cutout. Its head clamps the narrow strip of board in front of the cutout (add a washer if the head does not reach far enough). This stops the front of the board lifting when the rear screw is tightened. (The photo shows the v1 base, without the standoff.)
 
 <img src="../images/assembly/9_screw_down_pcb_in_bottom_shell.jpg" width="520" alt="Step 9">
 
@@ -108,7 +109,7 @@ Drop the two buttons into their slots, then lay the retainer plate over them so 
 
 ### Step 12
 
-Screw the plate down with the two M3×6 countersunk screws, fully. The plate seats on the shell's ledge and leaves the hinge pins a small fixed clearance, so there is no tension to set. Each button should move freely and drop under gravity when pushed up; if one binds, sand its hinge pin lightly.
+Screw the plate down with the two M3×6 countersunk screws, fully. The plate seats on the shell's ledge, so there is no tension to set. The two thin fingers in the middle of the plate are springs: each presses the inner end of one hinge pin onto its seat, which keeps the buttons from sagging toward the middle. Each button should still swing freely; if one is stiff, sand the top of its pin lightly where the spring finger's pad touches it.
 
 <img src="../images/assembly/12_screw_down_retainer_plate_proper_tension.jpg" width="520" alt="Step 12">
 
@@ -116,13 +117,13 @@ Screw the plate down with the two M3×6 countersunk screws, fully. The plate sea
 
 ### Step 13
 
-You now have the two finished halves: the top shell with buttons, and the base with the PCB. Make sure the buttons are fully seated when combining the shells. 
+You now have the two finished halves: the top shell with buttons, and the base with the PCB. Make sure the buttons are fully seated when combining the shells. Hook the rear first: hold the base tilted with its front a few millimetres out of the shell, slide it back so the two tabs on the shell's rear wall go through the slots in the base's rear uprights, then swing the front closed. (The photo shows the v1 parts.)
 
 <img src="../images/assembly/13_combine_two_shells.jpg" width="520" alt="Step 13">
 
 ### Step 14
 
-Fit the halves together and screw them together from underneath with the M3×8 countersunk screws. If you're using PTFE slides, stick them on the underside.
+With the rear hooked in, screw the halves together from underneath with the two M3×8 countersunk screws at the **front** corners (v1 had them at the rear; the photo shows v1). If you're using PTFE slides, stick them on the underside.
 
 Test both buttons with the case screws fully tight. Each striker screw sets its button: out = longer (clicks sooner), in = shorter. Aim for no free play and no pre-click. If a button feels stuck with no click, its switch is being held down: open the shell and turn that button's striker screw in about a quarter turn. Tightening the case screws lowers the strikers slightly, so always judge the adjustment with the case closed up.
 

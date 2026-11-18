@@ -16,7 +16,7 @@ mouse, this one has **two buttons**.
 | Small Phillips screwdriver | For the M185's own screws. |
 | 1 × AA battery | Alkaline AA. |
 | PTFE mouse slides (optional) | Self-adhesive pads on the underside for smoother gliding; use any you like. |
-| M3 screws | 1 × M3×4 flat head (PCB), 2 × M3×6 countersunk (button retainer), 4 × M3×8 countersunk (2 case, 2 button strikers); see [docs/ASSEMBLY.md](docs/ASSEMBLY.md). |
+| M3 screws | 1 × M3×4 flat head (PCB rear), 1 × M3×6 (PCB front; add a washer if the head is small), 2 × M3×6 countersunk (button retainer), 4 × M3×8 countersunk (2 case, 2 button strikers); see [docs/ASSEMBLY.md](docs/ASSEMBLY.md). |
 
 
 > **⚠️ Buy a genuine Logitech M185.** Discount marketplaces (Temu, AliExpress and the like)
@@ -32,8 +32,10 @@ design orientation (X × Y × Z, mm).
 
 | File | Qty | Size (mm) | Purpose |
 |------|:---:|-----------|---------|
-| `base.stl` | 1 | 57.7 × 84.8 × 18.1 | Bottom plate; holds the M185 board and battery. |
-| `top_shell.stl` **or** `top_shell_lisa_logo.stl` | 1 | 62.2 × 91.7 × 31.1 | The Lisa-style upper shell. The `_lisa_logo` variant has an embossed "Lisa" wordmark on top; the plain one is smooth (the photos also show it with an Apple logo decal). |
+| `base.stl` | 1 | 57.7 × 84.8 × 18.1 | Bottom plate; holds the M185 board and battery. Hooks onto two tabs at the rear of the shell and screws on at the two front corners. |
+| `top_shell.stl` **or** `top_shell_lisa_logo.stl` | 1 | 62.2 × 91.7 × 31.1 | The Lisa-style upper shell. Each has a 1.4 mm deep recess on top for a separately printed logo plate: the `_lisa_logo` variant takes the wide Lisa plate, the plain one takes the square Apple logo plate. |
+| `lisa_logo_plate.stl` | 1 | 21.4 × 9.8 × 1.4 | Plate with the raised "Lisa" wordmark for `top_shell_lisa_logo.stl`. `lisa_logo_plate_blank.stl` is the same plate without the wordmark, as a template for your own. |
+| `apple_logo_plate_blank.stl` | 1 | 9.9 × 9.9 × 1.4 | Blank plate for the recess in `top_shell.stl`, as a template for an Apple logo. It is the same plate as on the [Macintosh mouse](https://github.com/wottle/mac-mouse-logitech-m185), so a logo plate made for that fits here. |
 | `left_button.stl` | 1 | 16.7 × 27.2 × 23.9 | Left button, with a post for its striker screw. |
 | `right_button.stl` | 1 | 23.9 × 27.2 × 16.7 | Right button, with a post for its striker screw. |
 | `button_stop.stl` | 1 | 35.6 × 16.3 × 2.6 | Retainer plate that holds both buttons in the top shell. |
@@ -44,8 +46,24 @@ design orientation (X × Y × Z, mm).
 \* The supplied slicer projects print two, one that is slightly taller that fit better for me; only one is used in the build. Use the one that slides better when the PCB is screwed down.
 
 The buttons and retainer are the **v2** design: each button's click point is set with an M3 screw
-instead of a fixed printed plunger, and the hinge has a fixed small clearance instead of being set by
-how hard the retainer is screwed down. The original v1 parts are kept in [`models/v1/`](models/v1/).
+instead of a fixed printed plunger. The retainer is screwed down fully; two thin spring fingers on it
+press the inner end of each hinge pin onto its seat, so the buttons cannot sag toward the middle of the
+mouse, and the four rigid fingers are only a backstop. The button caps stand 1 mm higher than v1. The original v1 parts are kept in [`models/v1/`](models/v1/).
+
+The case is **v2** as well: the two case screws moved from the rear corners to the front corners,
+and the rear of the base now hooks onto two tabs inside the shell, so both ends are held shut.
+The side walls of the top shell are vertical, flat and parallel (the top is about 1.9 mm wider on
+each side than v1; the rim is unchanged), so the shell can also be printed standing on a side.
+The v2 base and shells only fit each other, not the v1 base or shells.
+The base also has a standoff in the PCB's scroll-wheel cutout: an M3×6 there clamps the front of the
+board down, and the shell's front wall is relieved so the board's front edge no longer touches it.
+
+![v2 case](images/v2_case.png)
+
+The logo is now a separate plate, so it can be printed in other colours and glued in. The v1 shells had
+the wordmark moulded in (Lisa variant) or a shallow 0.6 mm recess for a decal (plain variant).
+
+![logo plates](images/logo_plates.png)
 
 ![v2 buttons and retainer](images/v2_buttons.png)
 

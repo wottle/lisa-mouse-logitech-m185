@@ -81,7 +81,17 @@ Pick one, in order of finish quality:
    - Because the underside is sloped, expect **many filament changes early in the print**
      if you use a separate support-interface filament.
 
-> The top shell in the slicer projects is set up for the single-material "top face up, level top" option.
+4. **On its side** (single-material FDM, v2 shell). The side walls are vertical, flat and
+   parallel, so the shell can stand on either side. The top surface is then built from layer
+   edges instead of resting on supports; the inside of the upper side wall needs supports.
+
+> The top shell in the slicer projects is set up for the single-material "top face up, level top" option,
+> and the projects still contain the v1 base and top shell. Re-import `base.stl` and the top shell from
+> `models/` to print the v2 case.
+
+### Logo plates
+Print the logo plate flat, show face up (the bevelled side is the back), and glue it into the recess in
+the top shell. With a multi-colour printer, paint or split the plate in the slicer.
 
 ## Fit
 
