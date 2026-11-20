@@ -7,6 +7,10 @@ mouse, this one has **two buttons**.
 
 ![The finished Lisa Mouse, Lisa logo version](images/assembly/18a_assembly_complete_lisa_logo.jpg)
 
+![Animation: the Lisa mouse's parts coming together](images/animation.gif)
+
+*The printed parts coming apart and together (render; [10 s MP4, 720p](images/animation.mp4)).*
+
 ## What you need
 
 | Item | Notes |

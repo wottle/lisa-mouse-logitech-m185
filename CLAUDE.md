@@ -136,6 +136,12 @@ Open items:
 - Retake assembly photos for steps 9, 12, 13, 14 and 18 (they show v1; the text says so).
 - Colour recommendations (TODO in `docs/PRINTING.md`).
 
+## Animation
+
+`images/animation.gif` (README, 640×360, 15 fps) and `images/animation.mp4` (1280×720, 30 fps, 10 s loop)
+are VTK renders of the assembled models: exploded, together, one full turn, apart again. They were rendered
+outside the repo (offscreen VTK through EGL, piped to ffmpeg); re-render them when the models change.
+
 ## Working conventions
 
 - **Mike runs git himself.** Leave changes uncommitted; give him the commit command. Claude cannot push.
