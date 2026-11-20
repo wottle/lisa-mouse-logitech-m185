@@ -32,21 +32,29 @@ mouse, this one has **two buttons**.
 
 ## Printed parts
 
-STL files are in [`models/`](models/). Dimensions are the bounding box in the model's
-design orientation (X × Y × Z, mm).
+STL files are in [`models/`](models/), in three folders:
+
+| Folder | What |
+|--------|------|
+| [`models/common/`](models/common/) | Base, buttons, retainer, logo plates, battery door and power switch: the same however you print. |
+| [`models/fdm/`](models/fdm/) | The two top shells for **FDM**: side walls straightened to vertical, flat and parallel, so the shell prints standing on a side (see [PRINTING.md](docs/PRINTING.md)). |
+| [`models/resin/`](models/resin/) | The two top shells for **resin**: the side walls lean in toward the top like the original Lisa mouse's. Everything else matches the FDM shells. |
+
+Print one top shell from `fdm/` or `resin/`, and the rest from `common/`. Dimensions are the bounding
+box in the model's design orientation (X × Y × Z, mm).
 
 | File | Qty | Size (mm) | Purpose |
 |------|:---:|-----------|---------|
-| `base.stl` | 1 | 57.7 × 84.8 × 18.1 | Bottom plate; holds the M185 board and battery. Hooks onto two tabs at the rear of the shell and screws on at the two front corners. |
-| `top_shell.stl` **or** `top_shell_lisa_logo.stl` | 1 | 62.2 × 91.7 × 31.1 | The Lisa-style upper shell. Each has a 1.4 mm deep recess on top for a separately printed logo plate: the `_lisa_logo` variant takes the wide Lisa plate, the plain one takes the square Apple logo plate. |
-| `lisa_logo_plate.stl` | 1 | 21.4 × 9.8 × 1.4 | Plate with the raised "Lisa" wordmark for `top_shell_lisa_logo.stl`. `lisa_logo_plate_blank.stl` is the same plate without the wordmark, as a template for your own. |
-| `apple_logo_plate_blank.stl` | 1 | 9.9 × 9.9 × 1.4 | Blank plate for the recess in `top_shell.stl`, as a template for an Apple logo. It is the same plate as on the [Macintosh mouse](https://github.com/wottle/mac-mouse-logitech-m185), so a logo plate made for that fits here. |
-| `left_button.stl` | 1 | 17.7 × 27.2 × 23.9 | Left button, with a post for its striker screw. |
-| `right_button.stl` | 1 | 23.9 × 27.2 × 17.7 | Right button, with a post for its striker screw. |
-| `button_stop.stl` | 1 | 35.6 × 16.2 × 2.6 | Retainer plate that holds both buttons in the top shell. |
-| `on_off_button.stl` | 1* | 12.0 × 7.2 × 6.0 | Power switch actuator, slides in the base to operate the M185 power switch. |
-| `battery_cover_1.stl` | 1 | 14.7 × 53.1 × 8.9 | Battery door (main plate). |
-| `battery_cover_2.stl` | 1 | 7.5 × 11.8 × 6.2 | Battery door (latch piece). |
+| `common/base.stl` | 1 | 57.7 × 84.8 × 18.1 | Bottom plate; holds the M185 board and battery. Hooks onto two tabs at the rear of the shell and screws on at the two front corners. |
+| `fdm/` or `resin/` `top_shell.stl` **or** `top_shell_lisa_logo.stl` | 1 | 62.2 × 91.7 × 31.1 | The Lisa-style upper shell. Each has a 1.4 mm deep recess on top for a separately printed logo plate: the `_lisa_logo` variant takes the wide Lisa plate, the plain one takes the square Apple logo plate. |
+| `common/lisa_logo_plate.stl` | 1 | 21.4 × 9.8 × 1.4 | Plate with the raised "Lisa" wordmark for `top_shell_lisa_logo.stl`. `lisa_logo_plate_blank.stl` is the same plate without the wordmark, as a template for your own. |
+| `common/apple_logo_plate_blank.stl` | 1 | 9.9 × 9.9 × 1.4 | Blank plate for the recess in `top_shell.stl`, as a template for an Apple logo. It is the same plate as on the [Macintosh mouse](https://github.com/wottle/mac-mouse-logitech-m185), so a logo plate made for that fits here. |
+| `common/left_button.stl` | 1 | 17.7 × 27.2 × 23.9 | Left button, with a post for its striker screw. |
+| `common/right_button.stl` | 1 | 23.9 × 27.2 × 17.7 | Right button, with a post for its striker screw. |
+| `common/button_stop.stl` | 1 | 35.6 × 16.2 × 2.6 | Retainer plate that holds both buttons in the top shell. |
+| `common/on_off_button.stl` | 1* | 12.0 × 7.2 × 6.0 | Power switch actuator, slides in the base to operate the M185 power switch. |
+| `common/battery_cover_1.stl` | 1 | 14.7 × 53.1 × 8.9 | Battery door (main plate). |
+| `common/battery_cover_2.stl` | 1 | 7.5 × 11.8 × 6.2 | Battery door (latch piece). |
 
 \* The Creality slicer project uses a slightly smaller variant of the on/off button. Use whichever slides better when the PCB is screwed down.
 
@@ -84,13 +92,14 @@ Part previews are in [`images/`](images/).
 ## Repository layout
 
 ```
-models/     Print-ready STLs (one per part)
+models/     Print-ready STLs: common/ (both ways), fdm/ and resin/ (the top shells), v1/ (the originals)
 print/      Slicer projects with plate layout, orientation and settings
             (Bambu Studio / Bambu Lab A1, Creality Print / K2 Plus)
 docs/       Printing and assembly instructions
 images/     Part previews and slicer plate previews
 scripts/    build_models.py — regenerates models/ and images/ from the source OBJ/STL export
             adjustable_buttons.py — builds the v2 buttons and retainer from models/v1
+            front_screws.py — builds the v2 case (FDM and resin shells) and logo plates from models/v1
 ```
 
 ## Credits

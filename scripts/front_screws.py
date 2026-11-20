@@ -2,7 +2,10 @@
 """v2 case: case screws at the front corners, hook tabs at the rear, parallel side walls, and logo
 recesses deep enough to take a separately printed logo plate.
 
-Builds models/base.stl, top_shell.stl, top_shell_lisa_logo.stl and the Lisa logo plates from the v1 parts in models/v1.
+Builds from the v1 parts in models/v1:
+  models/fdm/    top_shell.stl, top_shell_lisa_logo.stl  with parallel side walls, to print on a side
+  models/resin/  top_shell.stl, top_shell_lisa_logo.stl  with v1's leaning side walls (like the original Lisa mouse)
+  models/common/ base.stl and the Lisa logo plates
 Usage: python3 scripts/front_screws.py
 Requires: numpy, trimesh, rtree, manifold3d.
 """
@@ -38,7 +41,8 @@ RELIEF_X=(-15.5,18.0)           # S frame (the board's front edge spans about -1
 RELIEF_Z=(25.0,SEAT+0.1)        # from 5.6 mm above the board down to the seat
 RELIEF_WALL=1.3                 # front wall left behind the pocket (v1: 2.55)
 FRONT_OUT=(49.30,0.2113,20.0)   # outside of the front wall: y = 49.30 + 0.2113*(z-20)
-PARALLEL_SIDES=True             # push the leaning side walls out so both sides are vertical, flat and parallel (for printing on a side)
+VARIANTS=(('fdm',True),('resin',False))   # (folder, parallel sides): FDM shells get vertical, flat, parallel side walls so they
+                                           # print standing on a side; resin shells keep v1's leaning walls, as on the original
 def outer_x(shell_tm,sgn,z,y=10.0):
     loc,_,_=shell_tm.ray.intersects_location(np.array([[sgn*80,y,z]],float),np.array([[-sgn,0,0]],float),multiple_hits=False)
     return float(loc[0][0])
@@ -101,9 +105,9 @@ def lisa_wordmark(v1_logo_shell):
     """the raised 'Lisa' wordmark of the v1 shell as a 2D outline in plate coordinates (seen from outside)"""
     L=roof_frame(v1_logo_shell,*lisa_centre(),inv=True)^box(-10.2,10.2,-4.3,4.3,0.35,0.75)
     return L.rotate([180,0,0]).project().simplify(0.01).rotate(180)      # turned so it reads upright in the plate file
-def new_shell(shell_tm,logo=None):
-    """logo: None = leave the top alone, False = Apple recess only, True = Lisa recess"""
-    if PARALLEL_SIDES: shell_tm=straighten_sides(shell_tm)
+def new_shell(shell_tm,logo=None,parallel=True):
+    """logo: None = leave the top alone, False = Apple recess only, True = Lisa recess. parallel: straighten the side walls (FDM)"""
+    if parallel: shell_tm=straighten_sides(shell_tm)
     add,cut=shell_changes(shell_tm); S=to_man(shell_tm)
     # order: remove old bosses, add new features, then drill
     S=S-cut[0]-cut[2]
@@ -131,19 +135,18 @@ def new_base():
         Bs=Bs+box(u0,u1,-34.2,-32.75,26.0,36.2)            # widen the upright
         Bs=Bs-box(t0-0.4,t1+0.4,-36,-32.0,SLOT_Z[0],SLOT_Z[1])
     return max(to_B(Bs).decompose(),key=lambda d:d.volume()).simplify(0.0005)
-def build_case():
+def build_case(parallel=True):
     st=tm('top_shell'); sl=tm('top_shell_lisa_logo')
-    shell=new_shell(st,logo=False)
+    shell=new_shell(st,logo=False,parallel=parallel)
     sl_S=sl.copy(); sl_S.apply_translation([-v for v in LOGO_SHIFT])
-    logo=new_shell(sl_S,logo=True).translate(LOGO_SHIFT)
+    logo=new_shell(sl_S,logo=True,parallel=parallel).translate(LOGO_SHIFT)
     word=lisa_wordmark(to_man(sl_S))
     return shell,logo,new_base(),plate(lisa_outline(),word),plate(lisa_outline())
-if __name__=='__main__':
-    shell,logo,base,lplate,lblank=build_case()
-    for n,M in (('top_shell',shell),('top_shell_lisa_logo',logo),('base',base),('lisa_logo_plate',lplate),('lisa_logo_plate_blank',lblank)):
-        t=to_tm(M); t.export(os.path.join(MODELS,n+'.stl')); t2=trimesh.load(os.path.join(MODELS,n+'.stl'))
-        print(f'{n:20s} tris {len(t2.faces):6d} watertight {t2.is_watertight} bodies {len(M.decompose())} size {t2.extents.round(1)}')
-    _,R,Lb,St=build()                                      # v2 buttons and retainer
+def save(M,sub,n):
+    d=os.path.join(MODELS,sub); os.makedirs(d,exist_ok=True)
+    t=to_tm(M); t.export(os.path.join(d,n+'.stl')); t2=trimesh.load(os.path.join(d,n+'.stl'))
+    print(f'{sub+"/"+n:28s} tris {len(t2.faces):6d} watertight {t2.is_watertight} bodies {len(M.decompose())} size {t2.extents.round(1)}')
+def check_case(shell,base,R,Lb,St):
     P={'shell':shell,'base':to_S(base),'right':R,'left':Lb,'retainer':St}; ks=list(P); bad=0
     for i in range(len(ks)):
         for j in range(i+1,len(ks)):
@@ -157,4 +160,15 @@ if __name__=='__main__':
             for o in ('shell','base','retainer'):
                 v=(rot(P[k],deg)^P[o]).volume()
                 if v>0.6: print(f'  pressed {deg}: {k} x {o} overlap {v:.2f}'); bad+=1
+    return bad
+
+if __name__=='__main__':
+    shells={}
+    for sub,par in VARIANTS:
+        shell,logo,base,lplate,lblank=build_case(par); shells[sub]=shell
+        save(shell,sub,'top_shell'); save(logo,sub,'top_shell_lisa_logo')
+    for n,M in (('base',base),('lisa_logo_plate',lplate),('lisa_logo_plate_blank',lblank)): save(M,'common',n)
+    _,R,Lb,St=build()                                      # v2 buttons and retainer
+    bad=0
+    for sub,shell in shells.items(): print(f'=== {sub} shell'); bad+=check_case(shell,base,R,Lb,St)
     print('problems:',bad)

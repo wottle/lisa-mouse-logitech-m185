@@ -2,7 +2,7 @@
 """Build the v2 buttons and retainer from the v1 parts in models/v1: screw-adjustable strikers, a hinge held without
 play by two spring fingers on the retainer, and button caps that stand 1 mm higher.
 
-Usage: python3 scripts/adjustable_buttons.py        (writes models/left_button.stl, right_button.stl, button_stop.stl)
+Usage: python3 scripts/adjustable_buttons.py        (writes models/common/left_button.stl, right_button.stl, button_stop.stl)
 Requires: numpy, trimesh, manifold3d.
 
 All work is done with the parts assembled in the top shell's frame S (inside of the shell = +z), then each part is
@@ -10,11 +10,11 @@ written back in the frame its original STL used."""
 import numpy as np, trimesh, manifold3d as mf, os
 from manifold3d import Manifold, Mesh, CrossSection
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MODELS=os.path.join(ROOT,'models'); V1=os.path.join(MODELS,'v1')
+MODELS=os.path.join(ROOT,'models'); V1=os.path.join(MODELS,'v1'); COMMON=os.path.join(MODELS,'common')
 def tm(name):
-    """v1 buttons and retainer come from models/v1; shell and base from models/."""
+    """loads from models/v1 first (so the scripts always start from v1), then models/common (apple_logo_plate_blank)"""
     p=os.path.join(V1,name+'.stl')
-    if not os.path.exists(p): p=os.path.join(MODELS,name+'.stl')
+    if not os.path.exists(p): p=os.path.join(COMMON,name+'.stl')
     m=trimesh.load(p,force='mesh'); m.merge_vertices(digits_vertex=4); return m
 def to_man(m):
     M=Manifold(Mesh(vert_properties=np.asarray(m.vertices,dtype=np.float32),tri_verts=np.asarray(m.faces,dtype=np.uint32))); assert M.status()==mf.Error.NoError,M.status(); return M
@@ -170,4 +170,4 @@ def check(shell,R,Lb,St):
     print('problems:',bad); return bad
 if __name__=='__main__':
     import sys
-    check(*export(sys.argv[1] if len(sys.argv)>1 else MODELS))
+    check(*export(sys.argv[1] if len(sys.argv)>1 else COMMON))

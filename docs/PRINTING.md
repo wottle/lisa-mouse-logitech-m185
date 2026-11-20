@@ -22,10 +22,15 @@ v2 build.
 
 Any FDM printer with roughly a 100 × 100 mm bed can print every part.
 
+**Which top shell:** on an FDM printer use `models/fdm/`: its side walls are straightened so the shell
+prints standing on a side. On a resin printer use `models/resin/` instead: those shells keep the
+original Lisa mouse's leaning side walls. Everything else is in `models/common/` either way. Orient and
+support resin parts as your resin slicer suggests; the rest of this page is about FDM.
+
 ## Slicer projects
 
 Open one of these rather than the bare STLs: they carry the **print orientation**,
-supports and plate arrangement. The STLs in `models/` are in design orientation and need
+supports and plate arrangement (with the FDM shells). The STLs in `models/` are in design orientation and need
 to be laid out by you if you slice them directly.
 
 | Project | Slicer |
@@ -45,7 +50,7 @@ Both projects hold the v2 parts and are split into **two plates**:
 >   disable the other before slicing.
 > - Print only the logo plate that matches your shell.
 > - Each project has one on/off button. The Creality project uses a slightly smaller variant than
->   `models/on_off_button.stl`; use whichever slides better when the PCB is screwed down.
+>   `models/common/on_off_button.stl`; use whichever slides better when the PCB is screwed down.
 
 ## Part-by-part orientation
 

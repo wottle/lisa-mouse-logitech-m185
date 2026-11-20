@@ -1,7 +1,8 @@
 # Assembly
 
 Photos below show the full build, in order. Part names refer to the files in
-[`models/`](../models/).
+[`models/`](../models/): the top shell from `models/fdm/` or `models/resin/` (whichever you printed),
+everything else from `models/common/`.
 
 ## You'll need
 

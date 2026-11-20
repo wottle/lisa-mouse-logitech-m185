@@ -13,17 +13,18 @@ proven on the Mac mouse are being carried over here.
 
 | Path | What |
 |------|------|
-| `models/` | The STLs people print. Current design. |
+| `models/common/` | The STLs people print either way: base, buttons, retainer, logo plates, battery door, power switch, and `apple_logo_plate_blank`. |
+| `models/fdm/`, `models/resin/` | `top_shell`, `top_shell_lisa_logo`: FDM with straightened side walls, resin with v1's leaning walls. |
 | `models/v1/` | The original published parts. **Source geometry for every script; never edit.** |
-| `scripts/adjustable_buttons.py` | Builds `left_button`, `right_button`, `button_stop` from `models/v1`. |
-| `scripts/front_screws.py` | Builds `base`, `top_shell`, `top_shell_lisa_logo`, `lisa_logo_plate`, `lisa_logo_plate_blank` from `models/v1`. Imports `adjustable_buttons`. Runs the fit checks. |
-| `scripts/build_models.py` | Older: converts release OBJ/STL into `models/` and renders previews. Not part of the v2 work. |
+| `scripts/adjustable_buttons.py` | Builds `left_button`, `right_button`, `button_stop` from `models/v1` into `models/common`. |
+| `scripts/front_screws.py` | Builds both shell variants (`VARIANTS`) into `models/fdm` and `models/resin`, and `base`, `lisa_logo_plate`, `lisa_logo_plate_blank` into `models/common`, from `models/v1`. Imports `adjustable_buttons`. Runs the fit checks for each variant. |
+| `scripts/build_models.py` | Older: converts release OBJ/STL into `models/` and renders previews. Not part of the v2 work, and predates the common/fdm/resin folders. |
 | `docs/ASSEMBLY.md`, `docs/PRINTING.md`, `README.md` | User docs. Keep them in step with the models. |
 | `print/*.3mf` | Slicer projects. **Still contain v1 parts**; Mike re-saves these himself after test prints. |
 | `images/assembly/` | Build photos. Steps 9, 12, 13, 14 show v1 parts; the text says so. |
 | repo root `*.stl`, `*.3mf`, `release_files/`, `working files/` | Git-ignored local scratch. Leave alone. |
 
-`models/apple_logo_plate_blank.stl` is a copy of the Mac mouse's `logo_plate_blank.stl`; it is an input
+`models/common/apple_logo_plate_blank.stl` is a copy of the Mac mouse's `logo_plate_blank.stl`; it is an input
 to `front_screws.py` (its outline defines the Apple recess).
 
 ## Building
@@ -42,7 +43,7 @@ Both must end with `problems: 0`. Expected non-zero lines:
 - `top_shell ... watertight False`: a few zero-thickness slivers on the top panel inherited from v1
   (v1 was far worse). Slicers repair it. The logo shell is clean.
 
-`tm(name)` loads from `models/v1` first, then `models/`. So the scripts always start from v1.
+`tm(name)` loads from `models/v1` first, then `models/common`. So the scripts always start from v1.
 
 ## Frames
 
@@ -111,8 +112,11 @@ Left/right mean the user's left/right. In S the left button is at **+x**.
   `SLOT_Z`; 0.15 mm on the load side). Hook the rear first, swing the front shut.
 - The v1 rear corner blocks **stay** (Mike: solid corners need less support printing on a side). Only
   their pilot holes are filled. Do not remove them again.
-- `PARALLEL_SIDES`: side walls warped vertical at the rim width so the shell can print standing on a
-  side. Rim unchanged, top about 1.9 mm wider per side, base seat about 0.2 mm looser per side.
+- Parallel sides, **FDM shells only** (`VARIANTS`, `new_shell(parallel=True)`, `straighten_sides`): side walls warped
+  vertical at the rim width so the shell can print standing on a side. Rim unchanged, top about 1.9 mm wider per
+  side, base seat about 0.2 mm looser per side. The resin shells keep v1's leaning walls (Mike, 2026-11-20: resin
+  doesn't need it, and the leaning walls match the original Lisa mouse). Bosses and anything clipped to the hull
+  differ slightly between the two; the base and buttons are the same for both.
 - PCB front standoff in the wheel cutout (`ST_B`), as on the Mac: stops the front of the board lifting
   when the rear screw is tightened.
 - Relief pocket in the shell's front wall (`RELIEF_*`): v1's leaning wall overlapped the board's front
@@ -150,7 +154,9 @@ outside the repo (offscreen VTK through EGL, piped to ffmpeg); re-render them wh
   - Look at the render of the exact feature before describing it.
   - After writing files to the Mac, compare checksums there against the build. Do not copy and write
     in the same parallel step.
-- Print-friendliness rules Mike has asked for: flat bottoms with 45° bevels, 45° ramps under bosses and
+- Two outputs: FDM shells (print-friendly changes) and resin shells (the original's outside). Keep anything that
+  changes the outside only for printing on FDM behind the `parallel` switch.
+- Print-friendliness rules Mike has asked for (FDM): flat bottoms with 45° bevels, 45° ramps under bosses and
   tabs, conical countersinks, parallel sides for on-side printing, keep solid blocks where they save
   supports.
 - Prefer one named constant per tunable dimension, with a comment saying what it does, so a fit can be
